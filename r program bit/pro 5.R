@@ -1,0 +1,1 @@
+data <- read.csv("H:/RPrograms/student.csv") str(data) summary(data)

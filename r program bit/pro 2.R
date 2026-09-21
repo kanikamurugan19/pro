@@ -1,0 +1,3 @@
+v <- c(10, 20, 30, 40, 50) print("Vector:") print(v) print("Sum of Vector:") print(sum(v)) print("Mean of Vector:") 5print(mean(v)) # Matrix Creation m <- matrix(c(1,2,3,4,5,6), nrow = 2, ncol = 3)
+print("Matrix:") print(m) print("Matrix Addition:") print(m + 5) # List Creation student <- list( Name = "John", Age = 21, Marks = 85) print("List:") print(student) # Data Frame Creation df <- data.frame( RollNo = c(101,102,103), Name = c("Alice","Bob","Charlie"), Marks = c(90,85,88)) print("Data Frame:") print(df) print("Average Marks:") print(mean(df$Marks)) print("Students with Marks > 85:")
+print(df[df$Marks > 85, ])
