@@ -1,3 +1,0 @@
-a <- 20 b <- 10 # Arithmetic Expressions sum_result <- a + b difference <- a - b product <- a * b quotient <- a / b power <- a^2 # Display Results print(paste("Addition =", sum_result)) print(paste("Subtraction =", difference))
-print(paste("Multiplication =", product)) print(paste("Division =", quotient)) print(paste("Square of a =", power)) # Basic Functions numbers <- c(5, 10, 15, 20, 25) print(paste("Square Root of 25 =", sqrt(25))) print(paste("Mean =", mean(numbers))) print(paste("Maximum =", max(numbers))) print(paste("Minimum =", min(numbers))) print(paste("Length =", length(numbers)
-print(paste("Sum =", sum(numbers)))
