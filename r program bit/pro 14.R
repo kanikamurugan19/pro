@@ -17,6 +17,69 @@ plot( iris_data$Petal.Length, iris_data$Petal.Width, col = kmeans_model$cluster,
 spoints( kmeans_model$centers[,3], kmeans_model$centers[,4], col = 1:3, pch = 8,
          cex = 3)
 
+#bbb
+data <- data.frame(
+  Age = c(22, 25, 27, 30, 35, 40, 42, 45, 50, 52),
+  Income = c(20, 25, 28, 32, 40, 55, 60, 65, 75, 80)
+)
+
+
+print(data)
+
+
+data_scaled <- scale(data)
+
+
+set.seed(123)
+
+
+k_values <- 2:5
+
+# Store WCSS values
+wcss <- numeric(length(k_values))
+
+
+for (i in seq_along(k_values)) {
+  
+  k <- k_values[i]
+  
+  km <- kmeans(data_scaled, centers = k, nstart = 25)
+  
+  wcss[i] <- km$tot.withinss
+}
+
+
+result <- data.frame(
+  K = k_values,
+  WCSS = round(wcss, 3)
+)
+
+print(result)
+
+
+plot(k_values, wcss,
+     type = "b",
+     pch = 19,
+     xlab = "Number of Clusters (K)",
+     ylab = "Within-Cluster Sum of Squares",
+     main = "Elbow Method for Selecting K")
+
+
+set.seed(123)
+
+final_kmeans <- kmeans(data_scaled,
+                       centers = 3,
+                       nstart = 25)
+
+
+data$Cluster <- final_kmeans$cluster
+
+print(data)
+
+
+print(final_kmeans$centers)
+
+
 #ccc
 
 data(iris)
